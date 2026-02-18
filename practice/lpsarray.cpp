@@ -7,7 +7,7 @@ int main(){
     vector<int> lps((size_t)p, 0);
     int len = 0, i = 1;
     while(i < p){
-        if(pattern[(size_t)i] == pattern[(size_t)len]){
+        if(pattern[(size_t)i] == pattern[(size_t)len]){   // KMP String matching O(n+m)
             len++;
             lps[(size_t)i] = len;
             i++;
