@@ -10,18 +10,20 @@ int main(){
     cin>>pattern>>test;
     int p = (int)pattern.size(), t = (int)test.size();
     vector<int> result;
-    int hash_pattern = 0, hash_test = 0;
+    int hp = 0, ht = 0;
 
     for(int i=0; i<p; i++){
-        hash_pattern = hash_pattern*10 + (pattern[i] - 'a'-96);
-        hash_test = hash_test*10 + test[i] - 'a'-96;
+        hp = hp*10 + pattern[i] - 'a'+1;
+        ht = ht*10 + test[i] - 'a'+1;
     }
 
     for(int i=0; i<t-p+1; i++){
-        if(hash_pattern == hash_test){
+        if(hp == ht){
             result.push_back(i);
         }
-        hash_test = hash_test*10 - (test[i]-'a'-96)*pow(10, p) + (test[i+p]-'a'-96);
+        if(i<t-p){
+            ht = ht*10 - (test[i]-'a'+1)*pow(10, p-1) + (test[i+p]-'a'+1);
+        }
     }
     
     for(int idx:result){
