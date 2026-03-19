@@ -9,10 +9,10 @@ int solve(int n){
 int main(){ // O(2^n)
     int n;
     vector<int> a;
+    cout<<"Enter n: ";
     cin>>n;
     cout<<solve(n)<<endl;
-    cout<<c;
-
+    cout<<c<<endl;
     return 0;
 }
 
