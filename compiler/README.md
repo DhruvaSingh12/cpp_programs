@@ -25,7 +25,7 @@ Use `eps` for epsilon.
 With `g++`:
 
 ```powershell
-g++ src/*.cpp -I include -std=c++17 -Wall -Wextra -pedantic -o elite_parser.exe
+g++ src/*.cpp -I include -std=c++17 -Wall -Wextra -pedantic -o main.exe
 ```
 
 Or with CMake:
@@ -33,4 +33,9 @@ Or with CMake:
 ```powershell
 cmake -S . -B build
 cmake --build build
+```
+
+Run in external window:
+```powershell
+Start-Process powershell -ArgumentList "-NoExit -Command & 'F:\cpp\compiler\src\output\main.exe'"
 ```
