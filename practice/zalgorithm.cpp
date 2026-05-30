@@ -21,7 +21,7 @@ int main(){
         }
         else if(i<=r){
             int k=i-l;
-            if(z[k]<=r-i+1){
+            if(z[k]<r-i+1){
                 z[i]=z[k];
             }
             else {
